@@ -44,7 +44,28 @@ const Header: React.FC = () => {
         ))}
       </nav>
       <button onClick={() =>setToggle((prev: boolean) => !prev)}  className="flex md:hidden">
-        {toggle ? <CloseIcon /> : <MenuOpenIcon /> }</button>
+        {toggle ? <CloseIcon /> : <MenuOpenIcon/> }</button>
+        <div
+        className={`fixed inset-0 bg-white flex flex-col items-center justify-center gap-8 transition-transform transform ${
+          toggle ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+      >
+        <button
+          onClick={() => setToggle((prev: boolean) => !prev)}
+          className="flex md:hidden"
+        >
+          {toggle ? "close" : "open"}
+        </button>
+        {navData.map((item) => (
+          <a
+            key={item.route}
+            className="hover:text-blue-400 hover:underline"
+            href={item.route}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
