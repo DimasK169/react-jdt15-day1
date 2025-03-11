@@ -1,17 +1,25 @@
 import React, { useState } from "react";
+import HomeIcon from '@mui/icons-material/Home';
+import EmailIcon from '@mui/icons-material/Email';
+import RocketIcon from '@mui/icons-material/Rocket';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import CloseIcon from '@mui/icons-material/Close';
 
 const navData = [
   {
     route: "/home",
     label: "Home",
+    icon: <HomeIcon />
   },
   {
-    route: "/projects",
-    label: "Projects",
+    route: "/hobbies",
+    label: "Hobbies",
+    icon: <RocketIcon />
   },
   {
     route: "/Contact",
     label: "Contact",
+    icon: <EmailIcon />
   },
 ];
 
@@ -19,9 +27,9 @@ const Header: React.FC = () => {
     const [toggle, setToggle] = useState<boolean>(false);
 
   return (
-    <div className="flex flex-row justify-between py-5 px-10 shadow">
-      <h2 className="text-green-400">
-        <span className="text-red-600">Website-</span>ku
+    <div className="flex flex-row justify-between py-5 px-10 shadow bg-green-400">
+      <h2 className="text-black">
+        Robert Gaming
       </h2>
       <nav className="hidden md:flex gap-10">
         {navData.map((item) => (
@@ -30,12 +38,13 @@ const Header: React.FC = () => {
             className="hover:text-blue-400 hover:underline"
             href={item.route}
           >
+            {item.icon}
             {item.label}
           </a>
         ))}
       </nav>
       <button onClick={() =>setToggle((prev: boolean) => !prev)}  className="flex md:hidden">
-        {toggle ? "Close" : "Open"}</button>
+        {toggle ? <CloseIcon /> : <MenuOpenIcon /> }</button>
     </div>
   );
 };

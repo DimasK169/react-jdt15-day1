@@ -3,6 +3,7 @@ import potrait from "../../assets/potrait.jpg";
 import farming from "../../assets/farming.jpg";
 import Card from "../../component/card/card";
 import mobil from "../../assets/mobil.jpg";
+import gitar from "../../assets/gitar.jpg"
 
 const Home: React.FC = () => {
   return (
@@ -14,8 +15,7 @@ const Home: React.FC = () => {
           </h1>
           <p className="text-sm md:text-base mt-2">
             Seekor kera, terkurung, terpenjara dalam gua Di gunung tinggi, sunyi
-            tempat hukuman para dewa Bertindak sesuka hati loncat ke sana ke
-            sini Hiraukan semua masalah di muka bumi ini
+            tempat hukuman para dewa 
           </p>
         </div>
         <img
@@ -26,10 +26,10 @@ const Home: React.FC = () => {
       </section>
 
       <section className="flex flex-col">
-        <h1 className="font-semibold text-5xl text-center uppercase">
+        <h1 className="font-semibold text-4xl md:text-5xl text-center uppercase">
           My Hobbies
         </h1>
-        <div className="flex flex-row gap-10 p-20">
+        <div className="flex flex-col md:flex-row gap-10 p-20">
           <div className="flex-1">
             <Card
               imgSrc={farming}
@@ -41,6 +41,13 @@ const Home: React.FC = () => {
             <Card
               imgSrc={mobil}
               title="Balapan Gaming"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            />
+          </div>
+          <div className="flex-1">
+            <Card
+              imgSrc={gitar}
+              title="Gitar Gaming"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
             />
           </div>
